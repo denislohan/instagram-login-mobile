@@ -1,0 +1,72 @@
+@import url('https://fonts.cdnfonts.com/css/nexa?styles=27685,27680');
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0px;
+}
+
+.container {
+    margin: 0;
+    padding: 0.01px 1.875rem;
+    width: 100%
+}
+
+.white-wrapper {
+    background: #FFF;
+    padding: 0.01rem;
+    padding-top: 5rem;
+    /* filter: drop-shadow(0px 21.00374412536621px 31.505615234375px rgba(147, 153, 176, 0.15)); */
+    width: 100%;
+}
+
+.logo {
+    margin-top: 1.73rem;
+    margin-left: 6rem;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    border-radius: 6.301px;
+    background: #f2f1f1;
+    padding: 1rem 0 0.9rem 1rem;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+form input.text-input::placeholder {
+    color: #5A686C;
+    font-family: Nexa;
+    font-size: 16.602px;
+    font-style: normal;
+    font-weight: 400;
+    opacity: 10;
+    line-height: normal;
+}
+
+form input[type='submit'] {
+    padding-left: 0;
+    margin: auto;
+    border-radius: 6.301px;
+    background: linear-gradient(270deg, #A336BD -4.74%, #FF387D 29.23%, #FF5D34 70.94%, #FFAA1B 105.94%);
+    color: #FFF;
+    font-family: Nexa;
+    font-size: 14.703px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+}
