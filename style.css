@@ -10,6 +10,7 @@ html {
 body {
     margin: 0;
     padding: 0px;
+    max-width: 100vw;
 }
 
 .container {
@@ -37,11 +38,12 @@ body {
     max-width: 100%;
 }
 
-form input {
+form input,
+.full-width-input {
     display: block;
     width: 100%;
     border-radius: 6.301px;
-    background: #f2f1f1;
+    background: #f7f7f7;
     padding: 1rem 0 0.9rem 1rem;
     border: none;
     margin-bottom: 1rem;
@@ -69,4 +71,60 @@ form input[type='submit'] {
     font-weight: 800;
     line-height: normal;
     text-transform: uppercase;
+}
+
+.or {
+    margin: 1.5rem auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.or .bar {
+    flex: auto;
+    border: none;
+    height: 1px;
+    background: #EBEBEB;
+}
+
+a.full-width-input {
+    text-decoration: none;
+    text-align: center;
+    color: #1877F2;
+    font-family: Nexa;
+    font-size: 12.602px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background: url(images/fb-logo.svg) 22.5% center no-repeat;
+    border: 1.05px solid #1877F2;
+}
+
+.bottom-links {
+    margin-top: 2rem;
+}
+
+.bottom-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 1.5rem auto;
+    color: #1877F2;
+    font-family: Nexa;
+    font-size: 12.602px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.bottom-link:nth-of-type(1) {
+    color: #5A686C;
+    font-family: Nexa;
+    font-weight: 400;
+}
+
+.dash {
+    margin: auto;
+    width: 100px;
+    height: 1.05px;
+    background-color: #EBEBEB;
 }
