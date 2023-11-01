@@ -33,13 +33,15 @@ body {
 
 .logo {
     margin-top: 1.73rem;
-    margin-left: 6rem;
+    width: 100%;
+    margin-left: 40%;
     margin-right: auto;
     margin-bottom: 2rem;
 }
 
 .logo img {
     max-width: 100%;
+    margin: auto;
 }
 
 form input,
