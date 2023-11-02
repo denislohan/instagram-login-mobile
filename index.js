@@ -39,10 +39,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
         else {
             inputPassword.style.border = "1px solid red";
             setErrors(errors, 'passwordError', 'invalidPassword');
-            // let passInputError : error =  {errorType:'paesswordError', details:'invaliduserna'}
-            // let passwordError = errors.find(e => e.errorType ==='paesswordError')
-            // if(!passwordError)
-            //     errors.push(passInputError)
         }
     });
 });

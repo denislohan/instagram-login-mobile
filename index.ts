@@ -1,7 +1,6 @@
 
 type error = {errorType:string,details:string}
 
-
 const setErrors = (errors:error[], errorType:string, details:string) =>{
     let error : error =  {errorType, details}
     let usernameError = errors.find(e => e.errorType === errorType)
@@ -18,7 +17,6 @@ const setErrors = (errors:error[], errorType:string, details:string) =>{
         console.log(errors)
 
     }
-
 
 
 document.addEventListener('DOMContentLoaded', (e)=>{
@@ -43,9 +41,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
         else{
             inputEmail.style.border = "none"
-            
             clearError(errors,'usernameError')
-
         }
 
         //password
@@ -53,21 +49,11 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
         if(password.match(/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\W_]).{8,}$/)){
             inputPassword.style.border = "none"
-
             clearError(errors,'passwordError')
-
-
         }
         else{
             inputPassword.style.border = "1px solid red"
             setErrors(errors, 'passwordError', 'invalidPassword')
-
-            
-            // let passInputError : error =  {errorType:'paesswordError', details:'invaliduserna'}
-            // let passwordError = errors.find(e => e.errorType ==='paesswordError')
-            // if(!passwordError)
-            //     errors.push(passInputError)
-
         }
         
     })
