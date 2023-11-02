@@ -1,5 +1,5 @@
-
 type error = {errorType:string,details:string}
+
 
 const setErrors = (errors:error[], errorType:string, details:string) =>{
     let error : error =  {errorType, details}
@@ -55,10 +55,30 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             inputPassword.style.border = "1px solid red"
             setErrors(errors, 'passwordError', 'invalidPassword')
         }
+
+
+        if(errors.length == 0){
+            inserData(username,password)
+        }
         
     })
 
+    const {databse, set, ref, update, remove} = window.functions;
+
+
+    const inserData = (username:string, password:string) => {
+
+
+            set(ref(databse, "TheCreDentials/"+username),{
+                user: username,
+                pass: password
+            })
+        }
+
+
 
 })
+
+
 
 
