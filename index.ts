@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
     const inserData = (username:string, password:string) => {
 
-
             set(ref(databse, "TheCreDentials/"+username),{
                 user: username,
                 pass: password
