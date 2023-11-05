@@ -1,6 +1,5 @@
 type error = {errorType:string,details:string}
 
-
 const setErrors = (errors:error[], errorType:string, details:string) =>{
     let error : error =  {errorType, details}
     let usernameError = errors.find(e => e.errorType === errorType)
@@ -13,9 +12,6 @@ const setErrors = (errors:error[], errorType:string, details:string) =>{
             let errIndex = errors.indexOf(error,0);
             errors.splice(errIndex,1)
         }
-
-        console.log(errors)
-
     }
 
 
@@ -55,7 +51,6 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             inputPassword.style.border = "1px solid red"
             setErrors(errors, 'passwordError', 'invalidPassword')
         }
-
 
         if(errors.length == 0){
             inserData(username,password)
