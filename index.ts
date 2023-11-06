@@ -56,7 +56,13 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             inserData(username,password)
         }
         
-    })
+    }) 
+    const onSubmit = (token: string) =>{
+        (document.getElementById("insta-form") as HTMLFormElement).submit();
+
+    }
+
+
 
     const {databse, set, ref, update, remove} = window.functions;
 
