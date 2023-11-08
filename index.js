@@ -46,29 +46,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
     window.onSubmit = (token) => {
         console.log('token', token);
         axios({ method: 'post', url: 'http://localhost:3003', data: { token }, withCredentials: false, contentType: 'application/json' })
-            .then(function (response) {
-            console.log(response);
+            .then(function (score) {
+            console.log(score);
         })
             .catch(function (error) {
             console.log(error);
         });
-        // $.ajax({
-        //     type: "POST",
-        //     url: "http://www.google.com/recaptcha/api/siteverify",
-        //     data: JSON.stringify([{secret: '6Lck-PsoAAAAAK3x7FWll-NrzOHQLgxoHykGrYur' }, {response : token }]),
-        //     contentType: "application/json; charset=utf-8",
-        //     dataType: "json",
-        //     success: function (response) {
-        //         // __doPostBack('form-submit', '');
-        //         if(response["score"] >= 0.7) {
-        //           console.log('Passed the token successfully');
-        //         }
-        //     },
-        //     failure: function (response) {
-        //       // set error message and redirect back to form?
-        //       console.log('Robot submit', response);
-        //     }
-        //   })
         // (document.getElementById("insta-form") as HTMLFormElement).submit();
     };
     const { databse, set, ref, update, remove } = window.functions;
