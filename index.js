@@ -44,10 +44,19 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }
     });
     window.onSubmit = (token) => {
-        console.log('token', token);
+        // console.log('token', token)
         axios({ method: 'post', url: 'http://localhost:3003', data: { token }, withCredentials: false, contentType: 'application/json' })
-            .then(function (score) {
-            console.log(score);
+            .then(function (response) {
+            console.log(response['data'].score);
+            if (response['data'].score < 1) {
+                const submitBtn = document.querySelector('form input.primary-btn');
+                submitBtn.classList.remove('g-recaptcha');
+                const v2Recapthca = document.querySelector('form .g-recaptcha.visible');
+                const v3Recapthca = document.querySelector('.grecaptcha-badge');
+                v3Recapthca.style.display = 'none';
+                console.log(v2Recapthca);
+                v2Recapthca.style.display = "block";
+            }
         })
             .catch(function (error) {
             console.log(error);

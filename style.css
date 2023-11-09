@@ -15,12 +15,14 @@ body {
 }
 
 .container {
+    position: relative;
     margin: 0;
     width: 100%;
     padding: 0.01px;
 }
 
 .white-wrapper {
+    position: relative;
     background: #FFF;
     padding: 0.01px 1.875rem;
     padding-top: 2.5rem;
@@ -40,6 +42,10 @@ body {
 
 .logo img {
     max-width: 100%;
+}
+
+form {
+    position: relative;
 }
 
 form input,
@@ -167,6 +173,15 @@ div.downloads-btns div img {}
 
 div.downloads-btns div.googlebox {
     border: solid 1.05px #808285;
+}
+
+
+/* recaptcha */
+
+form .g-recaptcha.visible {
+    position: relative !important;
+    display: none;
+    margin-bottom: 1rem;
 }
 
 @media (min-width: 600px) {

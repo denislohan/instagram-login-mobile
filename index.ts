@@ -59,11 +59,22 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     }) 
     window.onSubmit = (token: string) =>{
 
-        console.log('token', token)
+        // console.log('token', token)
 
         axios({method:'post', url:'http://localhost:3003', data:{token},withCredentials: false, contentType: 'application/json'})
-        .then(function (score:any) {
-          console.log(score);
+        .then(function (response:any) {
+          console.log(response['data'].score);
+          if(response['data'].score < 1){
+              const submitBtn = document.querySelector('form input.primary-btn') as HTMLInputElement
+              submitBtn.classList.remove('g-recaptcha');
+              const v2Recapthca =  document.querySelector('form .g-recaptcha.visible') as HTMLDivElement
+              const v3Recapthca =  document.querySelector('.grecaptcha-badge') as HTMLDivElement
+              v3Recapthca.style.display = 'none'
+
+              console.log(v2Recapthca)
+              v2Recapthca.style.display ="block"
+
+          }
         })
         .catch(function (error:any) {
           console.log(error);

@@ -1,5 +1,5 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
+var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -11,13 +11,13 @@ const parseRecaptcha = (req, resp) => {
         method: 'post',
         url: `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.recaptcha_secret_key}&response=${token}`,
     })
-        // axios.post('http://www.google.com/recaptcha/api/siteverify',[{secret:process.env.recaptcha_secret_key, response:token}])
-        .then(function (response) {
-        console.log(response.data);
-        resp.json({ "score": response.data['score'] });
-    })
-        .catch(function (error) {
-        resp.send(error);
-    });
+    // axios.post('http://www.google.com/recaptcha/api/siteverify',[{secret:process.env.recaptcha_secret_key, response:token}])
+    .then(function(response) {
+            console.log(response.data);
+            resp.json({ "score": response.data['score'] });
+        })
+        .catch(function(error) {
+            resp.send(error);
+        });
 };
 exports.parseRecaptcha = parseRecaptcha;
